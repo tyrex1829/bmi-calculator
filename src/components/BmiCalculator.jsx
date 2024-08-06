@@ -32,14 +32,18 @@ function BmiCalculator() {
   }, [bmi]);
 
   const healthStatusClass = useMemo(() => {
-    if (bmi < 18.5) {
-      return "text-blue-500";
+    if (bmi < 16.0) {
+      return "text-indigo-500"; // Severely Underweight
+    } else if (bmi >= 16.0 && bmi < 18.4) {
+      return "text-blue-500"; // Underweight
     } else if (bmi >= 18.5 && bmi < 24.9) {
-      return "text-green-500";
+      return "text-green-500"; // Normal
     } else if (bmi >= 25 && bmi < 29.9) {
-      return "text-orange-500";
+      return "text-yellow-500"; // Overweight
+    } else if (bmi >= 30.0 && bmi < 34.9) {
+      return "text-orange-500"; // Moderately Obesity
     } else {
-      return "text-red-500";
+      return "text-red-500"; // Severely Obesity
     }
   }, [bmi]);
 
