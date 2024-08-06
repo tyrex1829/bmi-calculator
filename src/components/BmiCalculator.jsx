@@ -4,7 +4,6 @@ import React, { useMemo, useState } from "react";
 function BmiCalculator() {
   const [weight, setWeight] = useState(60);
   const [height, setHeight] = useState(130);
-  //   const [bmi, setBmi] = useState(0);
 
   const bmi = useMemo(() => {
     if (height > 0) {
