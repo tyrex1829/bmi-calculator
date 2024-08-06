@@ -31,6 +31,18 @@ function BmiCalculator() {
     }
   }, [bmi]);
 
+  const healthStatusClass = useMemo(() => {
+    if (bmi < 18.5) {
+      return "text-blue-500";
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+      return "text-green-500";
+    } else if (bmi >= 25 && bmi < 29.9) {
+      return "text-orange-500";
+    } else {
+      return "text-red-500";
+    }
+  }, [bmi]);
+
   return (
     <div className=" shadow-xl mt-8 mx-32 rounded-lg">
       <div className=" bg-purple-700 py-8 text-center text-white rounded-xl">
