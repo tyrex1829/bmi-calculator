@@ -15,6 +15,22 @@ function BmiCalculator() {
     }
   }, [weight, height]);
 
+  const healthStatus = useMemo(() => {
+    if (bmi < 16.0) {
+      return "Severely Underweight";
+    } else if (bmi >= 16.0 && bmi < 18.4) {
+      return "Underweight";
+    } else if (bmi >= 18.5 && bmi < 24.9) {
+      return "Normal";
+    } else if (bmi >= 25 && bmi < 29.9) {
+      return "Overweight";
+    } else if (bmi >= 30.0 && bmi < 34.9) {
+      return "Moderately Obesity";
+    } else {
+      return "Severely Obesity";
+    }
+  }, [bmi]);
+
   return (
     <div className=" shadow-xl mt-8 mx-32 rounded-lg">
       <div className=" bg-purple-700 py-8 text-center text-white rounded-xl">
@@ -52,6 +68,11 @@ function BmiCalculator() {
           <button className=" font-semibold bg-purple-500 px-8 py-3 rounded-3xl mt-2 text-white">
             BMI is : {bmi.toFixed(2)}
           </button>
+        </div>
+        <div className="text-center pt-5">
+          <p className="font-semibold">
+            <span className={`${healthStatusClass}`}>{healthStatus}</span>
+          </p>
         </div>
       </div>
     </div>
