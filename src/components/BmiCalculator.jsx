@@ -81,7 +81,7 @@ function BmiCalculator() {
         />
 
         <div className="text-center pt-7">
-          <button className=" font-semibold bg-purple-500 px-8 py-3 rounded-3xl mt-2 text-white">
+          <button className=" font-semibold bg-purple-500 px-8 py-3 rounded-3xl mt-2 text-white shadow-lg">
             BMI is : {bmi.toFixed(2)}
           </button>
         </div>
