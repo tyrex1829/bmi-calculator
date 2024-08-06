@@ -35,6 +35,25 @@ function BmiCalculator() {
             setWeight(value);
           }}
         />
+
+        <p className=" font-semibold pt-5">Height : {height} cm</p>
+        <Slider
+          className="py-4"
+          min={1}
+          max={350}
+          step={1}
+          value={height}
+          tooltip={{ open: true, formatter: (value) => `${value} cm` }}
+          onChange={(value) => {
+            setHeight(value);
+          }}
+        />
+
+        <div className="text-center pt-7">
+          <button className=" font-semibold bg-purple-500 px-8 py-3 rounded-3xl mt-2 text-white">
+            BMI is : {bmi.toFixed(2)}
+          </button>
+        </div>
       </div>
     </div>
   );
