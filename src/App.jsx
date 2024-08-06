@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   const [count, setCount] = useState(0);
 
-  return <></>;
+  return <div className=" text-3xl">BMI Calculator</div>;
 }
 
 export default App;
